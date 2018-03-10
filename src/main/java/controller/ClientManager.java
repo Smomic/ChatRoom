@@ -93,7 +93,7 @@ public class ClientManager extends Thread {
     public void send(ChatState state) {
         try {
             objectOutputStream.writeObject(state);
-        } catch (IOException e) {
+        } catch (IOException ignored) {
 
         }
     }
@@ -115,7 +115,7 @@ public class ClientManager extends Thread {
 
             if (socket != null)
                 socket.close();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
     }
 
@@ -137,7 +137,7 @@ public class ClientManager extends Thread {
 
             try {
                 Thread.sleep(TIME_BETWEEN_MESSAGES);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
         }
     }

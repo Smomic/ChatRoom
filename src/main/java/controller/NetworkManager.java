@@ -118,7 +118,7 @@ public class NetworkManager {
             objectInputStream.close();
             objectOutputStream.close();
             socket.close();
-        } catch (IOException | NullPointerException e) {
+        } catch (IOException | NullPointerException ignored) {
 
         }
 
@@ -233,7 +233,7 @@ public class NetworkManager {
                 sendEventToServer(new ResendEvent(lastMessageDate));
                 try {
                     Thread.sleep(SLEEP_MILISECONDS);
-                } catch (InterruptedException e) {
+                } catch (InterruptedException ignored) {
                 }
             }
         }

@@ -284,7 +284,7 @@ public class ClientViewController {
         logoutButton.setDisable(true);
 
         try {
-            Integer.parseInt(portString);
+            int a = Integer.parseInt(portString);
             print("\nWaiting for answer from server...\n");
             blockingQueue.put(new LogInEvent(usernameString, ipString, portString));
         } catch (NumberFormatException e) {
@@ -302,7 +302,7 @@ public class ClientViewController {
     public void logoutButtonAction() {
         try {
             blockingQueue.put(new LogOutEvent());
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
     }
 
@@ -320,7 +320,7 @@ public class ClientViewController {
         messageTextArea.setText("");
         try {
             blockingQueue.put(new MessageEvent(message));
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
     }
 }

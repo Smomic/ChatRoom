@@ -149,7 +149,7 @@ public class ServerManager extends Thread {
     /**
      * Method that close server socket
      *
-     * @throws IOException
+     * @throws IOException if socket cannot be closed
      */
     public void closeSocket() throws IOException {
         serverSocket.close();
